@@ -26,7 +26,7 @@ app.get("/barcode", (req, res) => {
     const includetext = String(req.query.includetext ?? "1") !== "0"; // 0 removes text
     const height = req.query.height != null ? Number(req.query.height) : undefined; // bar height (mm-ish units used by bwip-js)
     const width  = req.query.width  != null ? Number(req.query.width)  : undefined; // optional
-    const padding = req.query.padding != null ? Number(req.query.padding) : 8;
+    const padding = req.query.padding != null ? Number(req.query.padding) : 0;
 
     // Text controls (only applied if includetext = true)
     const textsize = req.query.textsize != null ? Number(req.query.textsize) : undefined;
